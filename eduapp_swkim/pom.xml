@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mobigen</groupId>
-	<artifactId>edu</artifactId>
+	<artifactId>edu_swkim</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>edu</name>
 	<description>Demo project for Spring Boot</description>
@@ -28,6 +28,7 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
+        <spring-cloud.version>2024.0.0</spring-cloud.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -75,10 +76,27 @@
 		<version>2.8.1</version>
 	</dependency>
 
+	<dependency>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+	</dependency>
+
 
 	</dependencies>
 
-	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
   <profiles>
     <profile>
         <id>local</id>
